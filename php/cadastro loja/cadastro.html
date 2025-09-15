@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content = "IE-edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/stylexx.css">
+  <title>M&M Doces e festas</title>
+  <script>
+    function validarFormulario(event) {
+      // Prevenir envio do formulário inicial
+      event.preventDefault();
+
+      // Obter valores dos campos
+      const nome = document.getElementById('nome').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const senha = document.getElementById('senha').value.trim();
+
+      // Verificar se todos os campos foram preenchidos
+      if (!nome || !email || !senha) {
+        alert('Por favor, preencha todos os campos!');
+        return false;
+      }
+
+      // Enviar o formulário caso esteja tudo preenchido
+      document.forms['cadastro'].submit();
+    }
+  </script>
+</head>
+<body>
+  <form method="POST" action="cadastro.php" name="cadastro" onsubmit="validarFormulario(event)">
+    <div class="main-login">
+      <div class="right-login">
+        <div class="card-login">
+          <h1>CADASTRO</h1>
+          <div class="textfield">
+            <label for="usuario">Nome</label>
+            <input type="text" name="nome" id="nome" placeholder="Nome">
+          </div>
+          <div class="textfield">
+            <label for="usuario">Email</label>
+            <input type="text" name="email" id="email" placeholder="Email">
+          </div>
+          <div class="textfield">
+            <label for="senha">Senha</label>
+            <input type="password" name="senha" id="senha" placeholder="Senha">
+          </div>
+          <input class="btn-login" type="submit" name="Enviar" id="Enviar" value="Enviar">
+        </div>
+      </div>
+    </div>
+  </form>
+</body>
+</html>
