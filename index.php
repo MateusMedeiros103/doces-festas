@@ -1,0 +1,682 @@
+<?php 
+
+ session_start();
+ error_reporting(0);
+ 
+ 
+ if ((!isset($_SESSION['email']) == true) and (!isset($_SESSION['nome']) == true) and (!isset($_SESSION['senha']) == true)) 
+ 	{
+ 	  unset($_SESSION['email']);
+	  unset($_SESSION['nome']);
+      unset($_SESSION['senha']);
+ 	  //header('Location: login.php');
+ 	}
+   
+ 	$logado = $_SESSION['nome'];
+   
+ 
+
+ ?>
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>M&M doces e festas </title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <script src="https://kit.fontawesome.com/ca14b9e588.js" crossoeigin="anonymous"></script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+/>
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Sailor
+  * Template URL: https://bootstrapmade.com/sailor-free-bootstrap-theme/
+  * Updated: Mar 17 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center">
+      <a href="index.php" class="logo me-auto"><img src="assets/img/logo/logo-removebg-preview.png" alt="" class="img-fluid"></a>
+      <h1 class="logo me-auto"><a href="index.html">M&M Doces e Festas</a></h1>
+     
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+    
+      <nav id="navbar" class="navbar">
+        <ul>
+          <hr></hr>
+          <li><a href="indexxx.php" class="active">Home</a></li>
+
+          <li class="dropdown"><a href="#"><span>Produtos</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="doces.php">Doces</a></li>
+              <li><a href="embalagens.php">Embalagens</a></li>
+              <li><a href="artigosparafesta.php">Artigo para festas</a></li>
+
+             
+                <ul>
+                  <li><a href="#">Deep Drop Down 1</a></li>
+                  <li><a href="#">Deep Drop Down 2</a></li>
+                  <li><a href="#">Deep Drop Down 3</a></li>
+                  <li><a href="#">Deep Drop Down 4</a></li>
+                  <li><a href="#">Deep Drop Down 5</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><a href="natal.php">Natal</a></li>
+       
+
+          <li><a href="contact.php">Contato</a></li>
+        
+         
+          <div class="usuario">
+  <a href="<?php echo $logado ? 'logout.php' : 'php/cadastro loja/login.html'; ?>">
+    <img src="assets/img/testimonials/usuario-removebg-preview.png" alt="">
+    <h2>
+      <?php 
+        if ($logado) {
+          echo "$logado/Sair"; // Exibe o nome do usuário logado
+        } else {
+          echo "Entrar"; // Exibe "Entrar" se não estiver logado
+        }
+      ?>
+    </h2>
+  </a>
+</div>
+          
+          
+          <div class="redes-container">
+          <a href=""><img src="assets/img/testimonials/whatsapp.png"  style="width: 27px; height: 25px; margin: 3px; margin-left: 50px; " alt="">
+          </a></div>
+          <div class="redes2-container">
+          <a href="https://www.instagram.com/mmdoces_festas/"><img src="assets/img/testimonials/instagram.png"  style="width: 27px; height: 25px; margin: 3px; " alt="">
+          </a></div>
+          <div class="redes3-container">
+          <a href="https://www.facebook.com/MMdocesfestasembalagens"><img src="assets/img/testimonials/facebook.png"  style="width: 27px; height: 25px; margin: 3px;" alt="">
+          </a></div>
+          <div class="redes4-container">
+          <a href="cart.php"><img src="assets/img/testimonials/cart-removebg-preview.png"  style="width: 45px; height: 45px; margin: -5px; margin-left: 10px; " alt="">
+          </a></div>
+        
+       
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <div>
+  <section id="hero">
+    <div id="heroCarousel" style = "display: block;" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+      <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+      <div class="carousel-inner" role="listbox">
+
+        <!-- Slide 1 -->
+        <div class="carousel-item active" style="background-image: url(assets/img/slide/benviindo.jpeg)">
+          <div class="carousel-container">
+            <div class="container">
+              <h2 class="animate__animated animate__fadeInDown">Bem-vindo a M&M Doces e Festas <span></span></h2>
+              <p class="animate__animated animate__fadeInUp">"Seja muito bem-vindo à M&M Doces, Festas e Embalagens! Aqui, cada visita é um doce momento de descobertas e celebrações. Explore nossa variedade de delícias açucaradas, decorações festivas e embalagens encantadoras, tudo cuidadosamente selecionado para tornar seus momentos especiais ainda mais memoráveis. Estamos ansiosos para compartilhar essa jornada de sabor e festividade com você. Sinta-se em casa e deixe-nos adoçar sua vida com nossas guloseimas e produtos encantadores. Bem-vindo ao nosso mundo de doçura e alegria!"</p>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item" style="background-image: url(assets/img/slide/feliz\ páscoa.png)">
+          <div class="carousel-container">
+            <div class="container">
+              <h2 class="animate__animated animate__fadeInDown">M&M Doces e festas na pascoa</h2>
+              <p class="animate__animated animate__fadeInUp">Bem-vindo à M&M Doces e Festas, onde a magia da Páscoa ganha vida! Ao entrar em nossa loja, você é imediatamente envolvido pelo aroma irresistível de chocolates frescos e pela atmosfera festiva que celebra essa época tão especial do ano.Nossas prateleiras transbordam com uma variedade deslumbrante de doces de Páscoa, desde os clássicos ovos de chocolate até coelhinhos adoráveis feitos com maestria artesanal. Cada mordida é uma experiência única, derretendo-se em sua boca com doçura e sabor inigualáveis.</p>
+              <a href="doces.php" class="btn-get-started animate__animated animate__fadeInUp scrollto">Visitar</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-item" style="background-image: url(assets/img/slide/embalagens.jpeg)">
+          <div class="carousel-container">
+            <div class="container">
+              <h2 class="animate__animated animate__fadeInDown">M&M Doces e festas e embalagens</h2>
+              <p class="animate__animated animate__fadeInUp">
+                Na M&M Doces e Festas, não apenas nos dedicamos a oferecer os melhores doces de Páscoa, mas também nos orgulhamos de apresentar uma variedade deslumbrante de embalagens encantadoras para tornar seus presentes ainda mais especiais.
+                
+                Nossas embalagens são verdadeiras obras de arte, cuidadosamente selecionadas para refletir o espírito alegre e festivo da Páscoa. Desde caixas decorativas até sacolas de presente temáticas, cada embalagem é escolhida com atenção aos detalhes, garantindo que seu presente seja entregue com estilo e elegância.</p>
+              <a href="embalagens.php" class="btn-get-started animate__animated animate__fadeInUp scrollto">Visitar</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+      </a>
+
+      <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+      </a>
+
+    </div>
+  </section>
+</div><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+
+    <section id="" class="clients section-bg">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 d-flex align-items-center justify-content-center">
+            <div class="fonte1">
+              <div class="image-wrapper">
+                <img src="assets/img/clients/726455.png" class="img-fluid" alt="">
+              </div>
+              <div class="text-wrapper align-middle"> <!-- Adicionada a classe align-middle -->
+              <div class="text-wrapper">
+                <h3 class="animate__backOutLeft"><b>Entregas em Taubaté</b></h3>
+                <h4>Compras acima de 100 reais são gratis as entregas</h4>
+              </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 d-flex align-items-center justify-content-center">
+            <div class="fonte1">
+              <div class="image-wrapper">
+                <img src="assets/img/clients/6785410.png" class="img-fluid" alt="">
+              </div>
+              <div class="text-wrapper align-middle"> <!-- Adicionada a classe align-middle -->
+              <div class="text-wrapper">
+                <h3><b>Compra segura</b></h3>
+                <h4>A proteção e sempre importante para o cliente</h4>
+              </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 d-flex align-items-center justify-content-center">
+            <div class="fonte1">
+              <div class="image-wrapper">
+                <img src="assets/img/clients/726476.png" class="img-fluid" alt="">
+              </div>
+              <div class="text-wrapper align-middle"> <!-- Adicionada a classe align-middle -->
+              <div class="text-wrapper">
+                <h3><b>Descontos a cada semana</b></h3>
+                <h4>Descontos ate 30% para todos os clientes</h4>
+
+              </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 d-flex align-items-center justify-content-center">
+            <div class="fonte1">
+              <div class="image-wrapper">
+                <img src="assets/img/clients/5663381.png" class="img-fluid" alt="">
+              </div>
+              <div class="text-wrapper align-middle"> <!-- Adicionada a classe align-middle -->
+              <div class="text-wrapper">
+                <h3><b>Atendimento ao cliente</b></h3>
+                <h4>A antenção do cliente e sempre importante para nós</h4>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+    <!-- End Clients Section -->
+    
+
+     <!-- ======= destaque ======= -->
+     <div class="hr">
+      <hr>
+    <div class="h2-sevices "><h2 class=" animate__animated animate__backInRight">Descontos da semana</h2></div>
+    <hr></div><br>
+
+     <div class="center">
+      <!-- Primeiro Card -->
+      <div class="card">
+        
+        <img src="assets/img/portfolio/chantilly_norcau_chanty_tradicional_1l_puratos_927_1_5e5742a5dab5ca2f6a97249729e1adc3.png" alt="Produto 1" class="product-img">
+        <div class="container">
+          <h4><b>Chantilly Norcau</b></h4>
+          <h3>Chantilly para decoração de bolos e doces</h3>
+          <div class="preco">
+            <s><span class="preco-antigo">R$ 20,90</span></s><br><br>
+            <span class="preco-atual"> R$ 19,90 </span>
+          </div><br>
+          <a href="natal.php" type="button" class="btn btn-outline-danger">Comprar</a>
+        </div>
+      </div>
+    
+      <!-- Segundo Card -->
+      <div class="card">
+        <img src="assets/img/portfolio/7342016660_1.png" alt="Produto 2" class="product-img">
+        <div class="container">
+          <h4><b>Bala Yogurte</b></h4>
+          <h3>Bala Yogurte para festas e alegrar o dia das crianças </h3>
+          <div class="preco">
+            <s><span class="preco-antigo">R$ 10,90</span></s><br><br>
+            <span class="preco-atual"> R$ 8,90 </span>
+          </div><br>
+          <a href="doces.php" type="button" class="btn btn-outline-danger">Comprar</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="assets/img/portfolio/D_NQ_NP_693333-MLB70536900293_072023-O.png" alt="Produto 2" class="product-img">
+        <div class="container">
+          <h4><b>Marmitex P</b></h4>
+          <h3>Marmitex P com 10 unidades  </h3>
+          <div class="preco">
+            <s><span class="preco-antigo">R$ 4,50</span></s><br><br>
+            <span class="preco-atual"> R$ 3,80 </span>
+          </div><br>
+          <a href="embalagens.php" type="button" class="btn btn-outline-danger">Comprar</a>
+        </div>
+      </div>
+    
+      <!-- Terceiro Card -->
+      <div class="card">
+        <img src="assets/img/portfolio/7acfdde6e4bd8517609d27a2ee5947e0.jpg" alt="Produto 3" class="product-img">
+        <div class="container">
+          <h4><b>Caixa de Suflair </b></h4>
+          <h3>Caixa Chocolate Suflair com 25 unidades </h3>
+          <div class="preco">
+            <s><span class="preco-antigo">R$ 25,00</span></s><br><br>
+            <span class="preco-atual"> R$ 23,00 </span>
+          </div><br>
+          <a href="doces.php" type="button" class="btn btn-outline-danger">Comprar</a>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="hr">
+      <hr>
+    <div class="h2-sevices"><h2>Navegue pela nossas categorias</h2></div>
+    <hr></div>
+  </div>
+    <div class="container-image">
+
+      
+      <div class="imagens" style="display: flex; gap: 75px; align-items: center; justify-content: center;">
+        <div class="image">
+         <a href="doces.php"> <img style="" src="assets/img/sonho_de_valsa-removebg-preview.png" alt=""></a>
+          
+        </div>
+      
+        <div class="image">
+         <a href="doces.php"> <img style="" src="assets/img/dori-yogurt-pops-50s-removebg-preview.png" alt=""></a>
+          
+        </div>
+      
+        <div class="image">
+          <a href="embalagens.php"><img style="" src="assets/img/marmitexp-removebg-preview.png" alt=""></a>
+          
+        </div>
+      
+        <div class="image">
+         <a href="artigosparafesta.php"> <img style="" src="assets/img/balaofestball.png" alt=""></a>
+          
+        </div>
+      
+        <div class="image">
+         <a href="natal.php"><img style="" src="assets/img/57889-Chantilly-Chanty-Norcau-1L-PURATOS-removebg-preview.png" alt=""></a>
+          
+        </div>
+      </div>
+      
+
+
+
+
+      <section id="counts" class="counts">
+      <form action="" method="POST">
+      <?php
+// Conectar ao banco de dados (ajuste com suas credenciais)
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "login"; // Substitua pelo nome do seu banco de dados
+
+// Criar a conexão
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Verificar se a conexão foi bem-sucedida
+if ($conn->connect_error) {
+    die("Falha na conexão: " . $conn->connect_error);
+}
+
+// Variáveis para armazenar os dados do formulário
+$nome = $email = $comentario = $avaliacao = "";
+$mensagem = ""; // Para exibir a mensagem de sucesso ou erro
+
+// Verificar se o formulário foi enviado
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Receber os dados do formulário
+    $nome = $_POST['nome'];
+    $email = $_POST['email'];
+    $comentario = $_POST['comentario'];
+    $avaliacao = $_POST['avaliacao'];
+
+    // Validar dados (simples exemplo de validação)
+    if (empty($nome) || empty($email) || empty($comentario) || empty($avaliacao)) {
+        $mensagem = "<div class='alert alert-danger'>Todos os campos são obrigatórios!</div>";
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $mensagem = "<div class='alert alert-danger'>Email inválido!</div>";
+    } else {
+        // Preparar a query para inserir os dados no banco
+        $stmt = $conn->prepare("INSERT INTO comentarios (nome, email, comentario, avaliacao) VALUES (?, ?, ?, ?)");
+        $stmt->bind_param("sssi", $nome, $email, $comentario, $avaliacao);
+
+        // Executar a query
+        if ($stmt->execute()) {
+            $mensagem = "<div class='alert alert-success'>Comentário enviado com sucesso!</div>";
+        } else {
+            $mensagem = "<div class='alert alert-danger'>Erro ao enviar o comentário: " . $stmt->error . "</div>";
+        }
+
+        // Fechar a declaração
+        $stmt->close();
+    }
+}
+
+// Fechar a conexão
+$conn->close();
+?>
+
+<!-- Exibir a mensagem (caso exista) -->
+<?php if (!empty($mensagem)) { echo $mensagem; } ?>
+    <div class="container" data-aos="fade-up">
+        <div class="row no-gutters">
+            <!-- Formulário com ação para o PHP processar -->
+           
+                <div class="col-xl-5 d-flex align-items-stretch justify-content-center justify-content-lg-start" data-aos="fade-right" data-aos-delay="100">
+                    <div class="image1" style="background: url('assets/img/menina\ da\ pergunta.png') center center no-repeat; background-size: cover; min-height: 400px; min-width: 550px;"></div>
+                </div>
+                <div class="col-xl-7 ps-4 ps-lg-5 pe-4 pe-lg-1 d-flex align-items-stretch" data-aos="fade-left" data-aos-delay="100">
+                    <div class="content d-flex flex-column justify-content-center">
+                        <h3>Deixe seu Comentário</h3>
+                        <div class="row">
+                            <!-- Nome do usuário -->
+                            <div class="mb-3">
+                                <label for="nome" class="form-label">Seu Nome</label>
+                                <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome" required>
+                            </div>
+
+                            <!-- Email do usuário -->
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Seu Email</label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+                            </div>
+
+                            <!-- Comentário -->
+                            <div class="mb-3">
+                                <label for="comentario" class="form-label">Seu Comentário</label>
+                                <textarea class="form-control" id="comentario" name="comentario" rows="3" required></textarea>
+                            </div>
+
+                            <!-- Avaliação por estrelas -->
+                            <div class="mb-3">
+                                <label class="form-label">Sua Avaliação</label>
+                                <ul class="avaliacao">
+                                    <li class="star-icon" data-avaliacao="1"></li>
+                                    <li class="star-icon" data-avaliacao="2"></li>
+                                    <li class="star-icon" data-avaliacao="3"></li>
+                                    <li class="star-icon" data-avaliacao="4"></li>
+                                    <li class="star-icon" data-avaliacao="5"></li>
+                                </ul>
+                                <input type="hidden" id="avaliacao" name="avaliacao" value="0">
+                            </div>
+
+                            <!-- Botão de Envio -->
+                            <div class="enviar">
+                                <button type="submit" class="btn btn-outline-warning">Enviar</button>
+                            </div>
+                        </div>
+                    </div><!-- End .content-->
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+  
+
+    
+   
+     
+
+ <!-- ======= Clients Section ======= -->
+   <!-- End Clients Section -->
+
+
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services">
+      <div class="hr">
+        <hr>
+      <div class="h2-sevices"><h2>Comentários</h2></div>
+      <hr></div>
+      <div class="container">
+        
+        
+        <div class="row">
+          <div class="col-md-6">
+            <div class="icon-box">
+              <img src="assets/img/clients/ana.png" alt="">
+
+              
+              
+              <h4>Ana Rosa rosa</h4>
+              <p>Fui muito bem atendida, eu precisava de um balão para decoração e o Rodrigo me ajudou muito, super atencioso e muito educado. Nota 10.</p>
+              <div class="rating">
+                <span class="selected">★</span>
+                <span class="selected">★</span>
+                <span class="selected">★</span>
+                <span class="selected">★</span>
+                <span class="selected">★</span>
+            </div>
+            </div>
+          </div>
+          <div class="col-md-6 mt-4 mt-md-0">
+            <div class="icon-box">
+              <img src="assets/img/clients/carlos.png" alt="">
+              <h4>Carlos Wilson</h4>
+              <p>Excelente em tudo!</p>
+                <p> preço e atendimento e variedades de produtos. Vale a pena conferir</p>
+                <div class="rating">
+                  <span class="selected">★</span>
+                  <span class="selected">★</span>
+                  <span class="selected">★</span>
+                  <span class="selected">★</span>
+                  <span class="selected">★</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 mt-4 mt-md-0">
+            <div class="icon-box">
+              <img src="assets/img/clients/renan.png" alt="">
+              <h4>Renan Beloni</h4>
+              <p>Uma boa opção para comprar diversos tipos de embalagens.</p>
+              <div class="rating">
+                <span class="selected">★</span>
+                <span class="selected">★</span>
+                <span class="selected">★</span>
+                <span class="selected">★</span>
+                <span class="selected">★</span>
+            </div>
+            </div>
+          </div>
+          <div class="col-md-6 mt-4 mt-md-0">
+            <div class="icon-box">
+              <img src="assets/img/clients/jessica.png" alt="">
+              <h4>Jéssica Santos</h4>
+              <p>Excelente atendimento , apesar de pequeno, o espaço oferece muita variedade em seus produtos.</p>
+              <div class="rating">
+                <span class="selected">★</span>
+                <span class="selected">★</span>
+                <span class="selected">★</span>
+                <span class="selected">★</span>
+                <span class="selected">★</span>
+            </div>
+            </div>
+          </div>
+          <div class="col-md-6 mt-4 mt-md-0">
+            <div class="icon-box">
+              <img src="assets/img/clients/andreia.png" alt="">
+              <h4>Andreia Aparecida</h4>
+              <p>Excelente</p>
+              <div class="rating">
+                <span class="selected">★</span>
+                <span class="selected">★</span>
+                <span class="selected">★</span>
+                <span class="selected">★</span>
+                <span class="selected">★</span>
+            </div>
+            </div>
+          </div>
+          <div class="col-md-6 mt-4 mt-md-0">
+            <div class="icon-box">
+              <img src="assets/img/clients/wellington.png" alt="">
+              <h4>Wellington Ribeiro</h4>
+              <p>Excelente para quem está a procura de embalagens</p>
+              <div class="rating">
+                <span class="selected">★</span>
+                <span class="selected">★</span>
+                <span class="selected">★</span>
+                <span class="selected">★</span>
+                <span class="selected">★</span>
+            </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+    <!-- ======= Portfolio Section ======= -->
+   <!-- End Portfolio Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-info">
+              <h3>M&M Doces e Festas</h3>
+              <p>
+                Rua Dr João Batista Ortiz <br>
+                Número 406 Parque senho Bonfim<br><br>
+                <strong>Telefone:</strong> (12) 997948965<br>
+                <strong>Email:</strong> m&mdocesefestas@gmail.com<br>
+              </p>
+              <div class="social-links mt-3">
+                <a href="#" class="twitter"><i class="bx bxl-whatsapp"></i></a>
+                <a href="https://www.facebook.com/MMdocesfestasembalagens" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="https://www.instagram.com/mmdoces_festas/" class="instagram"><i class="bx bxl-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+
+
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2596.3631120510977!2d-45.60611885542682!3d-23.030676755365203!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cc577133c4c089%3A0x475866b865a49f60!2sM%26M%20Doces%2C%20Festa%2C%20Embalagens%20e%20Personalizados!5e0!3m2!1spt-BR!2sbr!4v1715705845397!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        
+
+         
+
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Sailor</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/sailor-free-bootstrap-theme/ -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    // Captura o clique nas estrelas
+document.querySelectorAll('.star-icon').forEach(function(star) {
+    star.addEventListener('click', function() {
+        // Remover a classe 'ativo' de todas as estrelas
+        document.querySelectorAll('.star-icon').forEach(function(star) {
+            star.classList.remove('ativo');
+        });
+
+        // Adicionar a classe 'ativo' nas estrelas clicadas
+        this.classList.add('ativo');
+        
+        // Definir o valor da avaliação no campo oculto
+        document.getElementById('avaliacao').value = this.getAttribute('data-avaliacao');
+    });
+});
+  </script>
+
+</body>
+
+</html>
