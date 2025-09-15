@@ -1,0 +1,90 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: indie flower, cursive;
+}
+
+body{
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: rgb(231, 143, 28);	
+	color: rgb(0, 0, 0);
+}
+
+.txt-animado{
+	font-size: 45px;
+	font-weight: 300;
+}
+
+.txt-animado span{
+	position: relative;
+}
+
+.txt-animado span::before{
+    content: "";
+    color: rgb(250, 36, 36);
+    animation: palavras 20s infinite;
+}
+
+.txt-animado span::after {
+	content: "";
+	position: absolute;
+	height: 100%;
+	border-left: 2px solid rgb(224, 48, 48);
+	right: -10px;
+	animation: cursor .8s infinite, digita 20s steps(15) infinite;
+	width: calc(100% + 18px);
+	background-color:rgb(231, 143, 28);
+}
+
+@keyframes digita {
+	10%, 15%, 30%, 35%, 50%, 55%, 70%, 75%, 90%, 95%{
+		width: 0;
+	}
+	5%, 20%, 25%, 40%, 45%, 60%, 65%, 80%, 85%{
+		width: calc(100% + 18px);
+	}
+}
+
+@keyframes cursor {
+	0%{
+		border-left: 2px solid rgb(252, 236, 236);
+	}
+}
+
+@keyframes palavras {
+    0%,20%{
+    	content: "Email ou senha incorretos";
+    }
+    21%,40%{
+    	content: "Seu cadastro não foi encontrado";
+    }
+    41%,60%{
+    	content: "Tente novamente mais tarde";
+    }
+    61%,80%{
+    	content: "Email ou senha incorretos";
+    }
+    81%,100%{
+    	content: "Tente novamente mais tarde";
+    }
+}
+.voltar button{
+	width: 90%;
+	padding: 16px 0px;
+	margin: 25px;
+	border: none;
+	border-radius: 8px;
+	outline: none;
+	text-transform: uppercase;
+	font-weight: 800;
+	letter-spacing: 3px;
+	color: rgb(0, 0, 0);
+	background: rgb(243, 73, 43);
+	cursor: pointer;
+	box-shadow: 0px 10px 40px -12px rgb(255, 2, 2);
+	font-size: 0.8rem;
+}
